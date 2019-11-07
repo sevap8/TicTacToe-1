@@ -1,11 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TicTacToe_1.Interfaces;
 
 namespace TicTacToe_1
 {
-    public class PlayerWinCheck
+    public class PlayFields : IPlayFields
     {
+        public int[] PlayingFieldsArray { get; set; }
+        public string GameStatus { get; set; } // start end game
+        public bool CheckingAvailableMoves(int[] checkedArray)
+        {
+            for (int i = 0; i < checkedArray.Length; i++)
+            {
+                if (checkedArray[i] == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public bool CheckWin(int[] winningArrayCheck)
         {
             // processing possible winnings 'X'

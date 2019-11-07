@@ -12,7 +12,6 @@ namespace TicTacToe_1
             {
                 return true;
             }
-
             return false;
         }
     }

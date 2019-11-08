@@ -4,11 +4,11 @@ using System.Text;
 
 namespace TicTacToe_1.Interfaces
 {
-    public interface IPlayFields
+    public interface IGameState
     {
         int[] PlayingFieldsArray { get; set; }
         string GameStatus { get; set; } 
-        bool CheckingAvailableMoves(int[] checkedArray);
-        bool CheckWin(int[] winningArrayCheck);
+        bool CheckAvailableMoves();
+        bool CheckWin();
     }
 }

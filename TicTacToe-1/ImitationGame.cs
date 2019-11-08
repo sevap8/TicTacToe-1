@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TicTacToe_1.Interfaces;
 
 namespace TicTacToe_1
@@ -10,27 +8,25 @@ namespace TicTacToe_1
         private readonly IGame game;
         private readonly IPlayer player1;
         private readonly IPlayer player2;
-        private readonly IPlayFields playFields;
+        private readonly IGameState gameState;
         public ImitationGame(
             IGame game,
             IPlayer player1,
             IPlayer player2,
-            IPlayFields playFields)
+            IGameState gameState)
         {
             this.game = game;
             this.player1 = player1;
             this.player2 = player2;
-            this.playFields = playFields;
+            this.gameState = gameState;
         }
+
+        /// <summary>
+        /// The method of starting the game where the action will take place
+        /// </summary>
         public void Run()
         {
-            player1.MakeAMove(6, playFields, player1);
-            player2.MakeAMove(3, playFields, player2);
-
-            foreach (var item in playFields.PlayingFieldsArray)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine("I am working!");
         }
     }
 }

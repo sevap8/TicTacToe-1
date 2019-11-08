@@ -24,6 +24,13 @@ namespace TicTacToe_1
         }
         public void Run()
         {
+            player1.MakeAMove(6, playFields, player1);
+            player2.MakeAMove(3, playFields, player2);
+
+            foreach (var item in playFields.PlayingFieldsArray)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

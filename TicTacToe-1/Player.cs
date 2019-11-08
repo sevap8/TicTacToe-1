@@ -9,7 +9,7 @@ namespace TicTacToe_1
     {
         public int Id { get; set; }
         public string PlayerStatus { get; set; } //victory or defeat
-        public void MakeAMove(int playerMove, PlayFields playFields, Player player)
+        public void MakeAMove(int playerMove, IPlayFields playFields, IPlayer player)
         {
             playFields.PlayingFieldsArray[playerMove] = player.Id;
         }

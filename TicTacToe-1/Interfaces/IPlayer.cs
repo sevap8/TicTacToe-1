@@ -8,6 +8,6 @@ namespace TicTacToe_1.Interfaces
     {
         int Id { get; set; }
         string PlayerStatus { get; set; } //victory or defeat
-        void MakeAMove(int playerMove, PlayFields playFields, Player player);
+        void MakeAMove(int playerMove, IPlayFields playFields, IPlayer player);
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TicTacToe_1.Interfaces;
+﻿using TicTacToe_1.Interfaces;
 
 namespace TicTacToe_1
 {
@@ -11,14 +8,14 @@ namespace TicTacToe_1
         public string PlayerStatus { get; set; } //victory or defeat
 
         /// <summary>
-        /// method allows the player to make a move
+        /// Method allows the player to make a move.
         /// </summary>
         /// <param name="playerMove"></param>
-        /// <param name="playFields"></param>
+        /// <param name="gameState"></param>
         /// <param name="player"></param>
-        public void MakeMove(int playerMove, IGameState playFields, IPlayer player)
+        public void MakeMove(int playerMove, IGameState gameState)
         {
-            playFields.PlayingFieldsArray[playerMove] = player.Id;
+            gameState.PlayingFieldsArray[playerMove] = Id;
         }
     }
 }

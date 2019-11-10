@@ -7,7 +7,7 @@ namespace TicTacToe_1
     public class CellFreeCheck
     {
         /// <summary>
-        /// this method will do validation of the player’s move on the client side
+        /// This method will do validation of the player’s move on the client side.
         /// </summary>
         /// <param name="cellPlayer"></param>
         /// <param name="arrayOfCells"></param>

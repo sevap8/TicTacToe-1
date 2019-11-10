@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TicTacToe_1.Components;
 using TicTacToe_1.Interfaces;
 
 namespace TicTacToe_1
@@ -10,9 +10,11 @@ namespace TicTacToe_1
             IGame game = new Game();
             IPlayer player1 = new Player() {Id = 1 };
             IPlayer player2 = new Player() {Id = 2 };
-            IGameState gameState = new GameState() { PlayingFieldsArray = new int[]{ 0, 2, 3, 4, 5, 6, 7, 0 }};
+            IGameState gameState = new GameState() { PlayingFieldsArray = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0 }, PlayingFieldsArrayTransformed = new string[9]};
+            IOutputWriter outputWriter = new OutputWriter();
+            IInputReader inputReader = new InputReader();
 
-            ImitationGame imitationGame = new ImitationGame(game, player1, player2, gameState);
+            ImitationGame imitationGame = new ImitationGame(game, player1, player2, gameState, outputWriter, inputReader);
             imitationGame.Run();
         }
     }

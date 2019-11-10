@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TicTacToe_1.Interfaces;
+﻿using TicTacToe_1.Interfaces;
 
 namespace TicTacToe_1
 {
     public class GameState : IGameState
     {
         public int[] PlayingFieldsArray { get; set; }
+        public string[] PlayingFieldsArrayTransformed { get; set; }
 
         /// <summary>
-        /// change string to enam
+        /// Change string to enam.
         /// </summary>
         public string GameStatus { get; set; }
 
         /// <summary>
-        /// checks if it is possible to make another move
+        /// Checks if it is possible to make another move.
         /// </summary>
         /// <returns></returns>
         public bool CheckAvailableMoves()
@@ -32,7 +30,7 @@ namespace TicTacToe_1
 
         /// <summary>
         /// Does the method check whether the winnings have arrived?
-        /// It needs to be converted to a more compact, now this is a quick solution
+        /// It needs to be converted to a more compact, now this is a quick solution.
         /// </summary>
         /// <returns></returns>
         public bool CheckWin()
@@ -122,6 +120,42 @@ namespace TicTacToe_1
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// This method draws the game field.
+        /// </summary>
+        /// <param name="outputWriter"></param>
+        public void DrawField(IOutputWriter outputWriter)
+        { 
+            outputWriter.ChangeСolorYellow();
+            outputWriter.Write(" -------------");
+            outputWriter.Write(string.Format(" | {0} | {1} | {2} |", PlayingFieldsArrayTransformed[0], PlayingFieldsArrayTransformed[1], PlayingFieldsArrayTransformed[2]));
+            outputWriter.Write(" ----+---+----");
+            outputWriter.Write(string.Format(" | {0} | {1} | {2} |", PlayingFieldsArrayTransformed[3], PlayingFieldsArrayTransformed[4], PlayingFieldsArrayTransformed[5]));
+            outputWriter.Write(" ----+---+----");
+            outputWriter.Write(string.Format(" | {0} | {1} | {2} |", PlayingFieldsArrayTransformed[6], PlayingFieldsArrayTransformed[7], PlayingFieldsArrayTransformed[8]));
+            outputWriter.Write(" -------------");
+            outputWriter.ChangeСolorWhite();
+        }
+
+        public void FieldArrayTransformed()
+        {
+            for (int i = 0; i < PlayingFieldsArray.Length; i++)
+            {
+                if (PlayingFieldsArray[i] == 0)
+                {
+                    PlayingFieldsArrayTransformed[i] = " ";
+                }
+                if (PlayingFieldsArray[i] == 1)
+                {
+                    PlayingFieldsArrayTransformed[i] = "X";
+                }
+                if (PlayingFieldsArray[i] == 2)
+                {
+                    PlayingFieldsArrayTransformed[i] = "O";
+                }
+            }
         }
     }
 }

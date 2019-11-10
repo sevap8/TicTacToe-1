@@ -10,7 +10,7 @@ namespace TicTacToe_1
         /// <summary>
         /// Change string to enam.
         /// </summary>
-        public string GameStatus { get; set; }
+        public enum GameStatus { awaitingPlayers = 'A', theGameStarted = 'S', endOfTheGame = 'E', timeIsOver = 'T' }
 
         /// <summary>
         /// Checks if it is possible to make another move.
@@ -139,6 +139,9 @@ namespace TicTacToe_1
             outputWriter.ChangeСolorWhite();
         }
 
+        /// <summary>
+        /// The method converts a sequence of numbers to 'X' and 'O'.(the method should be submitted to the client side)
+        /// </summary>
         public void FieldArrayTransformed()
         {
             for (int i = 0; i < PlayingFieldsArray.Length; i++)

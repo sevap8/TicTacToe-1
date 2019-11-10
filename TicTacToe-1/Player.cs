@@ -5,7 +5,7 @@ namespace TicTacToe_1
     public class Player : IPlayer
     {
         public int Id { get; set; }
-        public string PlayerStatus { get; set; } //victory or defeat
+        public enum PlayerStatus { winner = 'W', loser = 'L', draw = 'D' }
 
         /// <summary>
         /// Method allows the player to make a move.
